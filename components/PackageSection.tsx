@@ -3,6 +3,16 @@ import PackageGrid from "@/components/PackageGrid";
 import Link from "next/link";
 
 export default function PackageSection() {
+  const popularPackages = packages.slice(0, 4).map((p) => ({
+    title: p.title,
+    slug: p.slug,
+    location: p.location,
+    price: p.price,
+    days: p.days,
+    image: p.images[0], 
+    description: p.description,
+  }));
+
   return (
     <section className="max-w-7xl mx-auto px-6 py-14">
       <div className="flex justify-between items-center mb-6">
@@ -12,7 +22,7 @@ export default function PackageSection() {
         </Link>
       </div>
 
-      <PackageGrid packages={packages.slice(0, 4)} />
+      <PackageGrid packages={popularPackages} />
     </section>
   );
 }

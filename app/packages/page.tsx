@@ -23,7 +23,7 @@ export default function PackagesPage() {
   );
 }
 
-/* 🔥 CARD WITH AUTO IMAGE SLIDER */
+
 function PackageCard({ pkg }: any) {
   const [current, setCurrent] = useState(0);
 

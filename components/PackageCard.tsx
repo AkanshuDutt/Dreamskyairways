@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 export default function PackageCard({ pkg }: any) {
   const [current, setCurrent] = useState(0);
 
-  // 🔁 Auto slide images
+  
   useEffect(() => {
     if (!pkg.images || pkg.images.length === 0) return;
 

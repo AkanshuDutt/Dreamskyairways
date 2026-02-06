@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const airlines = [
+  "Logo.png",
   "Air_India.webp",
   "Akasa_Air.webp",
   "Alliance_Air.webp",
@@ -14,7 +15,7 @@ const airlines = [
   "Singapore_Airlines.webp",
   "SpiceJet.webp",
   "Vistara.webp",
-  "Logo.webp",
+ 
 
 ];
 

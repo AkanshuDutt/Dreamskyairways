@@ -1,12 +1,58 @@
 // app/policy/page.tsx
 import Link from "next/link";
+import type { Metadata } from "next";
+// SEo done
 
-export const metadata = {
-  title: "Privacy Policy & Pricing Policy | Secure & Transparent Travel Services",
+export const metadata: Metadata = {
+  title: "Privacy Policy & Pricing Policy | Dream Sky Airways",
+
   description:
-    "Read our comprehensive Privacy Policy and Pricing Policy. We ensure complete transparency in visa, travel insurance, and travel services pricing while protecting your personal data with industry-standard security measures.",
-  keywords:
-    "privacy policy, pricing policy, travel visa services privacy, travel insurance data protection, transparent visa pricing, no hidden charges travel services",
+    "Read Dream Sky Airways’ Privacy Policy & Pricing Policy to understand how we protect your data, ensure transparency, and maintain fair pricing practices.",
+
+  keywords: [
+    "Dream Sky Airways Privacy Policy",
+    "Data Protection Policy",
+    "User Privacy",
+    "Personal Data Security",
+    "Travel Website Privacy",
+    "Customer Data Protection",
+    "Aviation Company Privacy Policy",
+    "Secure Travel Services",
+  ],
+
+  alternates: {
+    canonical: "https://www.dreamskyairways.com/privacy-policy",
+  },
+
+  openGraph: {
+    title: "Privacy Policy & Pricing Policy | Dream Sky Airways",
+    description:
+      "Read Dream Sky Airways’ Privacy Policy & Pricing Policy to understand how we protect your data, ensure transparency, and maintain fair pricing practices.",
+    url: "https://www.dreamskyairways.com/privacy-policy",
+    siteName: "Dream Sky Airways",
+    images: [
+      {
+        url: "https://www.dreamskyairways.com/ogImage.webp",
+        width: 1200,
+        height: 630,
+        alt: "Dream Sky Airways Privacy Policy",
+      },
+    ],
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy & Pricing Policy | Dream Sky Airways",
+    description:
+      "Read Dream Sky Airways’ Privacy Policy & Pricing Policy to understand how we protect your data, ensure transparency, and maintain fair pricing practices.",
+    images: ["https://www.dreamskyairways.com/ogImage.webp"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function PolicyPage() {

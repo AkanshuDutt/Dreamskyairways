@@ -5,18 +5,30 @@ import WhatWeDo from "@/components/about/WhatWeDo";
 import VisionValues from "@/components/about/VisionValues";
 
 export const metadata: Metadata = {
-  title: "About Us | Dream Sky Airways Pvt. Ltd.",
-  description:
-    "Dream Sky Airways Pvt. Ltd. is a MCA, MSME & NCT certified aviation and travel company established in 2018, offering career guidance, job placement, and premium travel services across India.",
-  keywords: [
-    "Dream Sky Airways",
-    "Aviation Jobs",
-    "Airline Career Guidance",
-    "Flight Booking India",
-    "Travel Agency Noida",
-  ],
-};
+ title: "Our Journey & Mission – Dream Sky Airways India",
 
+description:
+  "Discover the story of Dream Sky Airways, our mission, values and aviation experience. Learn how we support careers and travel services",
+
+  keywords: [
+  "company profile dream sky",
+  "aviation business india",
+  "airline industry services",
+  "travel management company india",
+  "aviation career support",
+  "air hostess career guidance",
+  "pilot training consultancy",
+  "ground staff career services",
+  "aviation placement assistance",
+  "travel consulting firm india",
+  "established travel company 2018",
+  "aviation education services",
+  "career counselling aviation",
+],
+  alternates: {
+    canonical: "https://www.dreamskyairways.com/about",
+  },
+};
 export default function AboutPage() {
   return (
     <main>

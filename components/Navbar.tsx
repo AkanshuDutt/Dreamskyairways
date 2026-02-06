@@ -10,7 +10,7 @@ const menuItems = [
   { label: "Packages", href: "/packages" },
   { label: "Visa", href: "/visa" },
   { label: "Insurance", href: "/insurance" },
-  { label: "Careers", href: "/jobs" },
+  { label: "Careers", href: "/careers" },
   { label: "Contact Us", href: "/contact" },
 ];
 
@@ -50,7 +50,7 @@ export default function Navbar() {
             {/* LOGO (TEMP COMMENTED – DO NOT DELETE) */}
             
             <Image
-              src="/Logo.png"
+              src="/logo.png"
               alt="Dream Sky Airways Logo"
               width={45}
               height={40}

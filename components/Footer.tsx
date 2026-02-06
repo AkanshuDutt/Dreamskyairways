@@ -57,6 +57,7 @@ export default function Footer() {
                   { href: "/visa", label: "Visa Guidance" },
                   { href: "/visa", label: "Visa Processing Services" },
                   { href: "/insurance", label: "Travel Insurance" },
+                  { href: "/blogs", label: "Blogs" },
                 ].map((item) => (
                   <li key={item.label}>
                     <Link
@@ -84,7 +85,7 @@ export default function Footer() {
             <nav>
               <ul className="space-y-3.5">
                 {[
-                  { href: "/policy", label: "Privacy & Refund  Policy" },
+                  { href: "/privacy-policy", label: "Privacy & Refund  Policy" },
                   { href: "/terms", label: "Terms & Conditions" },
                   // { href: "/refund-policy", label: "Refund Policy" },
                   { href: "/disclaimer", label: "Disclaimer" },

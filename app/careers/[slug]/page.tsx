@@ -2,13 +2,74 @@ import { jobs } from "@/app/data/jobs";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import RollingDate from "@/components/RollingDate";
+import type { Metadata } from "next";
 
 type Props = {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 };
+export async function generateMetadata(
+  { params }: Props
+): Promise<Metadata> {
+  const { slug } = params;
+
+  const job = jobs.find((j) => j.slug === slug);
+
+  if (!job) {
+    return {
+      title: "Job Not Found | Dream Sky Airways Careers",
+      description:
+        "Explore exciting career opportunities at Dream Sky Airways. Find the right job and apply today.",
+    };
+  }
+
+  return {
+    title: "in  | Dream Sky Airways Careers",
+
+    description: `Apply for the ${job.title} position at Dream Sky Airways in ${job.location}. Salary: ${job.salaryRange}, Experience: ${job.experience}. Join our professional aviation and travel team today.`,
+
+    keywords: [
+      job.title,
+      "Dream Sky Airways Careers",
+      "Aviation Jobs",
+      "Travel Industry Jobs",
+      "Airline Jobs in India",
+      "Customer Support Jobs",
+      "Sales Jobs",
+      "Airport Jobs",
+      "Tourism Careers",
+    ],
+
+    alternates: {
+      canonical: `https://www.dreamskyairways.com/careers/${slug}`,
+    },
+
+    openGraph: {
+      title: `${job.title} | Dream Sky Airways Jobs`,
+      description: `Join Dream Sky Airways as a ${job.title}. Apply now and build your career in aviation and travel industry.`,
+      url: `https://www.dreamskyairways.com/careers/${slug}`,
+      siteName: "Dream Sky Airways",
+      images: [
+        {
+          url: "https://www.dreamskyairways.com/ogImage.webp",
+          width: 1200,
+          height: 630,
+          alt: "Dream Sky Airways Careers",
+        },
+      ],
+      type: "website",
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: `${job.title} | Dream Sky Airways`,
+      description: `Apply for ${job.title} at Dream Sky Airways. Start your professional journey today.`,
+      images: ["https://www.dreamskyairways.com/og-career.jpg"],
+    },
+  };
+}
 
 export default async function JobDetailPage({ params }: Props) {
-  const { slug } = await params;
+  const { slug } = params;
 
   const job = jobs.find((j) => j.slug === slug);
   if (!job) return notFound();

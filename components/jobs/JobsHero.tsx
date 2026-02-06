@@ -35,8 +35,10 @@ export default function JobsHero() {
             </h1>
 
             <p className="mt-6 text-lg md:text-xl text-gray-200">
-              Join our growing team and explore exciting opportunities in
-              aviation, travel management, sales, and operations.
+              Join our growing team and explore exciting career opportunities
+              in aviation, travel management, sales, marketing, customer service,
+              and operations. Become part of a professional environment where
+              innovation, dedication, and passion are valued every day.
             </p>
 
             <div className="mt-10 flex justify-center gap-4">
@@ -59,7 +61,7 @@ export default function JobsHero() {
       </section>
 
       {/* DESCRIPTION SECTION */}
-      <section className="max-w-6xl mx-auto px-6 py-20">
+      <section className="w-full mx-auto px-6 py-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -70,23 +72,65 @@ export default function JobsHero() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-800">
             Careers at Dream Sky Airways
           </h2>
+  <p className="text-gray-600 text-lg leading-relaxed w-full mx-auto">
+  At Dream Sky Airways, we believe that our people are the backbone of our
+  long-term success. Our organization is founded on trust,
+  professionalism, and a strong commitment to delivering reliable and
+  high-quality travel experiences. To learn more about our vision,
+  values, and company journey, you can visit our{" "}
+  <Link
+    href="/about"
+    className="text-[#083A3F] font-semibold hover:underline"
+  >
+    About Us
+  </Link>{" "}
+  page.
 
-          <p className="text-gray-600 text-lg leading-relaxed max-w-4xl mx-auto">
-            At Dream Sky Airways, we believe that our people are the foundation of
-            our success. We are building a dynamic and passionate team that is
-            driven by innovation, customer satisfaction, and excellence in the
-            travel industry. Whether you are an experienced professional or a
-            fresh talent eager to learn, we offer a work environment that
-            encourages growth, creativity, and collaboration.
-            <br /><br />
-            Our career opportunities span across aviation operations, travel
-            consultancy, customer support, sales, marketing, and backend
-            management roles. We focus on skill development, transparent career
-            progression, and a healthy work-life balance. At Dream Sky Airways,
-            your ideas matter, your efforts are valued, and your career is guided
-            towards long-term success. Join us and be part of a team that is
-            shaping the future of travel.
-          </p>
+  <br />
+  <br />
+
+  We offer diverse career opportunities across aviation operations,
+  travel consultancy, customer support, sales, marketing, and backend
+  management. Our teams work collaboratively to maintain operational
+  efficiency, service excellence, and customer satisfaction. Every role
+  contributes to strengthening our brand and ensuring smooth travel
+  solutions for our clients.
+
+  <br />
+  <br />
+
+  We also focus on sharing valuable knowledge through our official blog
+  platform. Our blogs cover topics such as travel tips, airline updates,
+  visa guidance, destination highlights, industry trends, and career
+  insights. These articles help readers stay informed and make confident
+  decisions in both travel planning and professional growth.
+
+  <br />
+  <br />
+
+  If you want to expand your understanding of the aviation and travel
+  industry, improve your skills, or stay updated with company news, we
+  encourage you to explore our{" "}
+  <Link
+    href="http://www.dreamskyairways.com/blogs"
+    className="text-[#083A3F] font-semibold hover:underline"
+  >
+    Blog
+  </Link>{" "}
+  section. Our blog reflects our dedication to transparency, continuous
+  learning, and long-term development.
+
+  <br />
+  <br />
+
+  Whether you are a fresher starting your career or an experienced
+  professional seeking new opportunities, Dream Sky Airways provides a
+  supportive environment focused on learning, growth, and long-term
+  success. Join us and take the next step toward a rewarding career.
+</p>
+
+
+
         </motion.div>
       </section>
     </>

@@ -5,12 +5,14 @@ import RollingDate from "@/components/RollingDate";
 import type { Metadata } from "next";
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
+
 export async function generateMetadata(
   { params }: Props
 ): Promise<Metadata> {
-  const { slug } = params;
+
+  const { slug } = await params; // ✅ No await
 
   const job = jobs.find((j) => j.slug === slug);
 
@@ -23,9 +25,9 @@ export async function generateMetadata(
   }
 
   return {
-    title: "in  | Dream Sky Airways Careers",
+    title: `${job.title} | Dream Sky Airways Careers`,
 
-    description: `Apply for the ${job.title} position at Dream Sky Airways in ${job.location}. Salary: ${job.salaryRange}, Experience: ${job.experience}. Join our professional aviation and travel team today.`,
+    description: `Apply for the ${job.title} position at Dream Sky Airways in ${job.location}. Salary: ${job.salaryRange}, Experience: ${job.experience}. Join our professional aviation team.`,
 
     keywords: [
       job.title,
@@ -45,9 +47,10 @@ export async function generateMetadata(
 
     openGraph: {
       title: `${job.title} | Dream Sky Airways Jobs`,
-      description: `Join Dream Sky Airways as a ${job.title}. Apply now and build your career in aviation and travel industry.`,
+      description: `Join Dream Sky Airways as a ${job.title}. Apply now and build your career.`,
       url: `https://www.dreamskyairways.com/careers/${slug}`,
       siteName: "Dream Sky Airways",
+      type: "website",
       images: [
         {
           url: "https://www.dreamskyairways.com/ogImage.webp",
@@ -56,20 +59,34 @@ export async function generateMetadata(
           alt: "Dream Sky Airways Careers",
         },
       ],
-      type: "website",
+      
     },
+    robots: {
+  index: true,
+  follow: true,
+  nocache: false,
+  googleBot: {
+    index: true,
+    follow: true,
+    noimageindex: false,
+    "max-video-preview": -1,
+    "max-image-preview": "large",
+    "max-snippet": -1,
+  },
+},
+
 
     twitter: {
       card: "summary_large_image",
       title: `${job.title} | Dream Sky Airways`,
-      description: `Apply for ${job.title} at Dream Sky Airways. Start your professional journey today.`,
+      description: `Apply for ${job.title} at Dream Sky Airways.`,
       images: ["https://www.dreamskyairways.com/og-career.jpg"],
     },
   };
 }
 
 export default async function JobDetailPage({ params }: Props) {
-  const { slug } = params;
+  const { slug } = await params;
 
   const job = jobs.find((j) => j.slug === slug);
   if (!job) return notFound();

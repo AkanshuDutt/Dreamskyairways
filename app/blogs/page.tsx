@@ -2,13 +2,13 @@
 import { blogs } from "../../app/data/blogs";
 import BlogCard from "@/components/blogs/BlogCard";
 import TravelBlogs from "@/components/blogs/TravelBlogs";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Travel Blogs | Dream Sky Airways",
   description:
     "Explore travel destinations, tips, and guides by Dream Sky Airways.",
 };
-
 export default function BlogsPage() {
   return (
     <section className="max-w-7xl mx-auto px-6 py-20">

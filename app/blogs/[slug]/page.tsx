@@ -79,7 +79,7 @@ export default async function BlogDetailsPage({ params }: Props) {
         {/* 🔥 CTA BOX */}
         <div className="mt-20 p-8 rounded-md bg-[var(--card)] shadow-md text-center">
           <h2 className="text-2xl font-semibold mb-4 text-[var(--primary)]">
-            Travel Enquiry – Dream Sky Airways Pvt. Ltd.
+            Travel Enquiry – Dream Sky Airways
           </h2>
 
           <p className="text-[var(--muted)] mb-8">

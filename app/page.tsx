@@ -35,6 +35,19 @@ export const metadata: Metadata = {
   "trusted travel partner India",
   "24x7 travel support",
   ],
+  robots: {
+  index: true,
+  follow: true,
+  nocache: false,
+  googleBot: {
+    index: true,
+    follow: true,
+    noimageindex: false,
+    "max-video-preview": -1,
+    "max-image-preview": "large",
+    "max-snippet": -1,
+  },
+},
   openGraph: {
     title: "Dream Sky Airways | Aviation & Travel Company in India",
     description:
@@ -58,6 +71,37 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
+    {/* Website Schema */}
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: `{
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Dream Sky Airways",
+      "url": "https://www.dreamskyairways.com",
+    }`,
+  }}
+/>
+{/* Homepage Breadcrumb */}
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: `{
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.dreamskyairways.com"
+        }
+      ]
+    }`,
+  }}
+/>
+
       <Hero
         titleLine1="Explore The World"
         titleLine2="With"

@@ -48,15 +48,69 @@ export const metadata: Metadata = {
       "Read Dream Sky Airways’ Privacy Policy & Pricing Policy to understand how we protect your data, ensure transparency, and maintain fair pricing practices.",
     images: ["https://www.dreamskyairways.com/ogImage.webp"],
   },
-
-  robots: {
+robots: {
+  index: true,
+  follow: true,
+  nocache: false,
+  googleBot: {
     index: true,
     follow: true,
+    noimageindex: false,
+    "max-video-preview": -1,
+    "max-image-preview": "large",
+    "max-snippet": -1,
   },
+},
 };
 
 export default function PolicyPage() {
   return (
+    <>
+    {/* Privacy Policy Page Schema */}
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: `{
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Privacy Policy - Dream Sky Airways",
+      "url": "https://www.dreamskyairways.com/privacy-policy",
+      "description": "Read the Privacy Policy of Dream Sky Airways to understand how we collect, use, store, and protect your personal data and information.",
+      "inLanguage": "en-IN",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Dream Sky Airways",
+        "url": "https://www.dreamskyairways.com"
+      }
+    }`,
+  }}
+/>
+{/* Privacy Policy Breadcrumb Schema */}
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: `{
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.dreamskyairways.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Privacy Policy",
+          "item": "https://www.dreamskyairways.com/privacy-policy"
+        }
+      ]
+    }`,
+  }}
+/>
+
+
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className="bg-[#0E5B63] text-white py-16 md:py-24">
@@ -448,5 +502,6 @@ export default function PolicyPage() {
         </div>
       </main>
     </div>
+    </>
   );
 }

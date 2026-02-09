@@ -1,11 +1,39 @@
-import { Metadata } from 'next';
+import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: 'Disclaimer | Dream Sky Airways',
-  description: 'Read the disclaimer for Dream Sky Airways, covering our role in travel bookings, visa guidance, insurance, and limitations of liability.',
-  keywords: 'travel disclaimer, visa disclaimer, booking terms, travel insurance disclaimer, Dream Sky Airways legal notice',
+export const metadata : Metadata = {
+  title : "Disclaimer | Dream Sky Airways – Legal Notice & Policy",
+  description : "Read the official disclaimer of Dream Sky Airways regarding website content, accuracy, liabilities, and third-party links. Stay informed and protected.",
+  keywords: [
+    "Dream Sky Airways disclaimer",
+     "legal notice",
+     "website disclaimer",
+     "liability policy",
+     "terms of use",
+    "aviation services disclaimer",
+  ],
+  alternates:{
+    canonical:"https://www.dreamskyairways.com/disclaimer",
+  },
+  openGraph : {
+    title :"Disclaimer | Dream Sky Airways – Legal Notice & Policy",
+    description:"Read the official disclaimer of Dream Sky Airways regarding website content, accuracy, liabilities, and third-party links. Stay informed and protected.",
+    url :"https://www.dreamskyairways.com/disclaimer",
+    siteName :"Dream Sky Airways",
+    images: [
+      {
+        url :"https://www.dreamskyairways.com/ogImage.webp",
+        height:"1200",
+        width :"630",
+        alt :"Dream Sky airways disclaimer",
+    }
+  ], 
+  },
+  twitter :{
+    card:"summary_large_image",
+    title :"Disclaimer | Dream Sky Airways – Legal Notice & Policy",
+    description:"Read the official disclaimer of Dream Sky Airways regarding website content, accuracy, liabilities, and third-party links. Stay informed and protected.",
+  },
 };
-
 export default function DisclaimerPage() {
   return (
     <main className="min-h-screen bg-gray-50 mt-10">

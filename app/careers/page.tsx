@@ -1,90 +1,104 @@
-"use client";
+import type { Metadata } from "next";
+import JobsPage from "./Careersclient";
+// Seo done 
+export const metadata: Metadata = {
+  title: "Build Your Career with Dream Sky Airways-Job Openings",
+  description:
+    "Build your career with Dream Sky Airways. Explore latest job openings, apply online, and grow with India’s leading aviation company today.",
 
-import Link from "next/link";
-import { jobs } from "@/app/data/jobs";
-import { motion } from "framer-motion";
-import RollingDate from "@/components/RollingDate";
-import JobsHero from "@/components/jobs/JobsHero"; // ✅ IMPORT
+  keywords: [
+    "Dream Sky Airways Careers",
+    "Airline Jobs in India",
+    "Travel Industry Jobs",
+    "Airport Jobs",
+    "Aviation Careers",
+    "Cabin Crew Jobs",
+    "Customer Support Jobs",
+    "Sales Jobs",
+  ],
 
-export default function JobsPage() {
+  alternates: {
+    canonical: "https://www.dreamskyairways.com/careers",
+  },
+
+  openGraph: {
+    title: "Build Your Career with Dream Sky Airways-Job Openings",
+    description:
+      "Build your career with Dream Sky Airways. Explore latest job openings, apply online, and grow with India’s leading aviation company today.",
+    url: "https://www.dreamskyairways.com/careers",
+    siteName: "Dream Sky Airways",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Build Your Career with Dream Sky Airways -Job Openings",
+    description: "Build your career with Dream Sky Airways. Explore latest job openings, apply online, and grow with India’s leading aviation company today",
+  },
+  robots: {
+  index: true,
+  follow: true,
+  nocache: false,
+  googleBot: {
+    index: true,
+    follow: true,
+    noimageindex: false,
+    "max-video-preview": -1,
+    "max-image-preview": "large",
+    "max-snippet": -1,
+  },
+},
+
+};
+export default function Careersclient(){
   return (
-    <>
-      
-      <JobsHero />
+      <>
+      {/* Careers Page Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: `{
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Careers at Dream Sky Airways",
+            "url": "https://www.dreamskyairways.com/careers",
+            "description": "Explore career opportunities at Dream Sky Airways. Apply for aviation, travel, and customer support jobs and build your professional future with us.",
+            "inLanguage": "en-IN",
+            "isPartOf": {
+              "@type": "WebSite",
+              "name": "Dream Sky Airways",
+              "url": "https://www.dreamskyairways.com"
+            }
+          }`,
+        }}
+      />
 
-      
-      <main
-        id="open-positions"
-        className="p-10 mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-      >
-        {jobs.map((job) => (
-          <Link key={job.slug} href={`/jobs/${job.slug}`}>
-            <motion.article
-              whileHover={{
-                scale: 1.07,
-                rotateX: 4,
-                rotateY: -4,
-              }}
-              transition={{
-                type: "spring",
-                stiffness: 220,
-                damping: 14,
-              }}
-              className="
-                relative cursor-pointer rounded-2xl p-6
-                bg-white
-                border border-[#083A3F]/30
-                backdrop-blur-xl
-                shadow-[0_25px_60px_-15px_rgba(8,58,63,0.55)]
-                hover:shadow-[0_35px_90px_-10px_rgba(8,58,63,0.85)]
-                hover:bg-white/90
-              "
-            >
-              {/* Glow */}
-              <div className="absolute inset-0 rounded-2xl bg-[#083A3F]/10 blur-2xl opacity-0 hover:opacity-100 transition"></div>
+      {/* Careers Breadcrumb Schema */}
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: `{
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.dreamskyairways.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Careers",
+          "item": "https://www.dreamskyairways.com/careers"
+        }
+      ]
+    }`,
+  }}
+/>
 
-              <div className="relative z-10 space-y-3">
-                <h2 className="text-xl font-bold text-[#083A3F]">
-                  {job.title}
-                </h2>
-
-                {/* <p className="text-sm text-gray-600">
-                   {job.location}
-                </p> */}
-
-                <p className="text-sm font-semibold text-[#083A3F]">
-                   {job.salaryRange}
-                </p>
-
-                <p className="text-sm text-gray-700">
-                   {job.experience}
-                </p>
-
-                <div className="flex justify-between items-center pt-3 text-sm">
-                  <span className="text-red-600 font-semibold">
-                     {job.seatsLeft} seats left
-                  </span>
-                  <span className="text-gray-500">
-                     Apply by <RollingDate baseDate={job.lastDate} />
-                  </span>
-                </div>
-
-                <button
-                  className="
-                    mt-4 w-full py-3 rounded-xl
-                    bg-[#083A3F]
-                    text-white font-semibold
-                    hover:bg-[#062E32]
-                    transition
-                  "
-                >
-                  Apply Now
-                </button>
-              </div>
-            </motion.article>
-          </Link>
-        ))}
-      </main>
-    </>
+   <JobsPage  />
+   </>
   );
 }

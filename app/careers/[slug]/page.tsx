@@ -4,7 +4,7 @@ import Link from "next/link";
 import RollingDate from "@/components/RollingDate";
 import type { Metadata } from "next";
 
-type Props = {
+ type Props = {
   params: Promise<{ slug: string }>;
 };
 
@@ -12,7 +12,7 @@ export async function generateMetadata(
   { params }: Props
 ): Promise<Metadata> {
 
-  const { slug } = await params; // ✅ No await
+  const { slug } = await params; 
 
   const job = jobs.find((j) => j.slug === slug);
 

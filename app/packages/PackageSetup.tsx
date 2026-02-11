@@ -6,7 +6,7 @@ import { packages } from "../data/packages";
 import { useEffect, useState } from "react";
 import HeroVideo from "@/components/HeroVideo";
 
-export default function PackagesPage() {
+ const PackageSetup = () => {
   return (
     <section className="max-w-7xl mx-auto px-6 py-14 mt-0">
 <HeroVideo/>
@@ -77,3 +77,7 @@ function PackageCard({ pkg }: any) {
     </Link>
   );
 }
+
+
+export default PackageSetup
+

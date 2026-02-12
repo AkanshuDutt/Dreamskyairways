@@ -1,16 +1,116 @@
 // app/policy/page.tsx
 import Link from "next/link";
+import type { Metadata } from "next";
+// SEo done
 
-export const metadata = {
-  title: "Privacy Policy & Pricing Policy | Secure & Transparent Travel Services",
+export const metadata: Metadata = {
+  title: "Privacy Policy & Pricing Policy | Dream Sky Airways",
+
   description:
-    "Read our comprehensive Privacy Policy and Pricing Policy. We ensure complete transparency in visa, travel insurance, and travel services pricing while protecting your personal data with industry-standard security measures.",
-  keywords:
-    "privacy policy, pricing policy, travel visa services privacy, travel insurance data protection, transparent visa pricing, no hidden charges travel services",
+    "Read Dream Sky Airways’ Privacy Policy & Pricing Policy to understand how we protect your data, ensure transparency, and maintain fair pricing practices.",
+
+  keywords: [
+    "Dream Sky Airways Privacy Policy",
+    "Data Protection Policy",
+    "User Privacy",
+    "Personal Data Security",
+    "Travel Website Privacy",
+    "Customer Data Protection",
+    "Aviation Company Privacy Policy",
+    "Secure Travel Services",
+  ],
+
+  alternates: {
+    canonical: "https://www.dreamskyairways.com/privacy-policy",
+  },
+
+  openGraph: {
+    title: "Privacy Policy & Pricing Policy | Dream Sky Airways",
+    description:
+      "Read Dream Sky Airways’ Privacy Policy & Pricing Policy to understand how we protect your data, ensure transparency, and maintain fair pricing practices.",
+    url: "https://www.dreamskyairways.com/privacy-policy",
+    siteName: "Dream Sky Airways",
+    images: [
+      {
+        url: "https://www.dreamskyairways.com/ogImage.webp",
+        width: 1200,
+        height: 630,
+        alt: "Dream Sky Airways Privacy Policy",
+      },
+    ],
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy & Pricing Policy | Dream Sky Airways",
+    description:
+      "Read Dream Sky Airways’ Privacy Policy & Pricing Policy to understand how we protect your data, ensure transparency, and maintain fair pricing practices.",
+    images: ["https://www.dreamskyairways.com/ogImage.webp"],
+  },
+robots: {
+  index: true,
+  follow: true,
+  nocache: false,
+  googleBot: {
+    index: true,
+    follow: true,
+    noimageindex: false,
+    "max-video-preview": -1,
+    "max-image-preview": "large",
+    "max-snippet": -1,
+  },
+},
 };
 
 export default function PolicyPage() {
   return (
+    <>
+    {/* Privacy Policy Page Schema */}
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: `{
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Privacy Policy - Dream Sky Airways",
+      "url": "https://www.dreamskyairways.com/privacy-policy",
+      "description": "Read the Privacy Policy of Dream Sky Airways to understand how we collect, use, store, and protect your personal data and information.",
+      "inLanguage": "en-IN",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Dream Sky Airways",
+        "url": "https://www.dreamskyairways.com"
+      }
+    }`,
+  }}
+/>
+{/* Privacy Policy Breadcrumb Schema */}
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: `{
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.dreamskyairways.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Privacy Policy",
+          "item": "https://www.dreamskyairways.com/privacy-policy"
+        }
+      ]
+    }`,
+  }}
+/>
+
+
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className="bg-[#0E5B63] text-white py-16 md:py-24">
@@ -402,5 +502,6 @@ export default function PolicyPage() {
         </div>
       </main>
     </div>
+    </>
   );
 }

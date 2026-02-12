@@ -1,7 +1,58 @@
-
-
 import { insurances } from "@/app/data/insurence";
+import type { Metadata } from "next";
 
+export const metadata : Metadata={
+  title: "Travel Insurance | Dream Sky Airways – Safe & Secure Journey",
+  description: "Get reliable travel insurance with Dream Sky Airways. Protect your trip with coverage for medical emergencies, delays, baggage loss, and cancellations.",
+  keywords: [
+    "travel insurance",
+    "trip protection",
+    "flight insurance",
+    "journey protection",
+    " travel safety",
+    "Dream Sky Airways insurance",
+
+  ],
+  alternates:{
+    canonical:"",
+  },
+  openGraph:{
+    title: "Travel Insurance | Dream Sky Airways – Safe & Secure Journey",
+    description:"Get reliable travel insurance with Dream Sky Airways. Protect your trip with coverage for medical emergencies, delays, baggage loss, and cancellations",
+    url :"https://www.dreamskyairways.com/insurance",
+    siteName:"Dream Sky Airways",
+    locale:"en_In",
+    type:"website",
+    images:[
+      { 
+        url:"https://www.dreamskyairways.com/ogImage.webp",
+          width: 1200,
+          height: 630,
+          alt: "Dream Sky Airways Careers",
+      },          
+    ],
+},
+ twitter:{
+    card:"summary_large_image",
+    title:"Travel Insurance | Dream Sky Airways – Safe & Secure Journey",
+    description:"Get reliable travel insurance with Dream Sky Airways. Protect your trip with coverage for medical emergencies, delays, baggage loss, and cancellations",
+    images: ["https://www.dreamskyairways.com/og-career.jpg"],
+  },
+  robots:{
+    index:true,
+    follow:true,
+    nocache:false,
+    googleBot:{
+      index:true,
+      follow:true,
+      noimageindex: false,
+      "max-video-preview": -1,
+      "max-image-preview":"large",
+      "max-snippet":-1,
+    },
+    
+  },
+};
 export default function TravelInsurancePage() {
   return (
     <main className="w-ful mt-15">

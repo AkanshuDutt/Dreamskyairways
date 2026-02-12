@@ -14,16 +14,16 @@ export default function AboutSection() {
         viewport={{ once: true }}
       >
         {/* 🔹 SEO Heading */}
-        <h2
+        <h1
           id="about-dream-sky-airways"
           className="text-3xl md:text-4xl font-semibold text-[var(--primary)] mb-8"
         >
-          About Dream Sky Airways Pvt. Ltd.
-        </h2>
+          Our Journey & Mission – Dream Sky Airways India
+        </h1>
 
         {/* 🔹 Paragraph 1 */}
         <p className="text-[var(--muted)] leading-relaxed mb-6">
-          <strong>Dream Sky Airways Pvt. Ltd.</strong> is a trusted aviation and
+          <strong>Dream Sky Airways</strong> is a trusted aviation and
           travel services company recognized by MCA, MSME, and NCT, established
           in 2018 with a clear vision to make travel and aviation careers more
           accessible across India. We specialize in domestic and international
@@ -56,7 +56,7 @@ export default function AboutSection() {
           Driven by integrity, transparency, and customer satisfaction, our goal
           is to build long-term relationships and create meaningful travel
           experiences. Whether you are planning your next trip or aiming to
-          build a future in aviation, Dream Sky Airways Pvt. Ltd. stands as a
+          build a future in aviation, Dream Sky Airways stands as a
           reliable partner committed to your success and growth.
         </p>
       </motion.div>

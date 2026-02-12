@@ -1,16 +1,108 @@
 // app/terms/page.tsx
 import Link from "next/link";
 
-export const metadata = {
-  title: "Terms & Conditions | Travel, Visa & Insurance Services",
-  description:
-    "Read our comprehensive Terms and Conditions for flight booking, bus booking, hotel booking, cab services, tour packages, visa guidance, visa processing, and travel insurance. Understand your rights, responsibilities, and our policies for transparent travel services.",
-  keywords:
-    "terms and conditions, travel booking terms, visa processing terms, travel insurance terms, flight booking conditions, hotel reservation terms, cab service rules, tour package agreements, visa guidance disclaimer, refund policy travel services",
-};
+  export const metadata = {
+    title: "Terms & Conditions | Travel, Visa & Insurance Policy",
+    description:
+      "Read our Terms & Conditions for travel, visa, and insurance services. Learn about policies, user responsibilities, payments, and service guidelines",
+    keywords:[
+      "terms and conditions", 
+      "travel booking terms",
+      "visa processing terms",
+      "travel insurance terms",
+      "flight booking conditions",
+      "hotel reservation terms",
+      "cab service rules",
+      "tour package agreements",
+      "visa guidance disclaimer",
+      "refund policy travel services",
+  ],
+  alternates:{
+    canonical: "https://www.dreamskyairways.com/terms",
+  },
+  openGraph: {
+    title:"Terms & Conditions | Travel, Visa & Insurance Policy",
+    description:"Read our Terms & Conditions for travel, visa, and insurance services. Learn about policies, user responsibilities, payments, and service guidelines.",
+    url:"https://www.dreamskyairways.com/terms",
+    siteName:"Dream Sky Airways",
+    type:"website",
+      images: [
+      {
+        url: "https://www.dreamskyairways.com/ogImage.webp",
+        width: 1200,
+        height: 630,
+        alt: "Dream Sky Airways Privacy Policy",
+      },
+    ],
+  },
+  twitter:{
+    card:"summary_large_image",
+    title:"Terms & Conditions | Travel, Visa & Insurance Policy",
+    description:"Read our Terms & Conditions for travel, visa, and insurance services. Learn about policies, user responsibilities, payments, and service guidelines.",
+  },
+  robots: {
+  index: true,
+  follow: true,
+  nocache: false,
+  googleBot: {
+    index: true,
+    follow: true,
+    noimageindex: false,
+    "max-video-preview": -1,
+    "max-image-preview": "large",
+    "max-snippet": -1,
+  },
+},
+  };
+  
 
 export default function TermsPage() {
   return (
+    <>
+    <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: `{
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Terms & Conditions - Dream Sky Airways",
+      "url": "https://www.dreamskyairways.com/terms",
+      "description": "Read the Terms and Conditions of Dream Sky Airways for travel, visa, and insurance services, including policies, user responsibilities, and legal guidelines.",
+      "inLanguage": "en-IN",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Dream Sky Airways",
+        "url": "https://www.dreamskyairways.com"
+      }
+    }`,
+  }}
+/>
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: `{
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.dreamskyairways.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Terms & Conditions",
+          "item": "https://www.dreamskyairways.com/terms"
+        }
+      ]
+    }`,
+  }}
+/>
+
+
+    
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className="bg-[#0c4a50] text-white py-16 md:py-24">
@@ -514,5 +606,6 @@ export default function TermsPage() {
         </div>
       </main>
     </div>
+    </>
   );
 }

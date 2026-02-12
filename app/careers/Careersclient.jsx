@@ -4,21 +4,18 @@ import Link from "next/link";
 import { jobs } from "@/app/data/jobs";
 import { motion } from "framer-motion";
 import RollingDate from "@/components/RollingDate";
-import JobsHero from "@/components/jobs/JobsHero"; // ✅ IMPORT
+import JobsHero from "@/components/careers/JobsHero"; // ✅ IMPORT
 
 export default function JobsPage() {
   return (
     <>
-      
-      <JobsHero />
-
-      
+      <JobsHero />  
       <main
         id="open-positions"
         className="p-10 mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
       >
         {jobs.map((job) => (
-          <Link key={job.slug} href={`/jobs/${job.slug}`}>
+          <Link key={job.slug} href={`/careers/${job.slug}`}>
             <motion.article
               whileHover={{
                 scale: 1.07,

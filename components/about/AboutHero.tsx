@@ -9,7 +9,7 @@ export default function AboutHero() {
       
       <Image
         src="/Aboutus.webp"
-        alt="Dream Sky Airways Pvt Ltd aviation and travel services team"
+        alt="Dream Sky Airways aviation and travel services team"
         fill
         priority
         className="object-cover"
@@ -24,9 +24,9 @@ export default function AboutHero() {
         transition={{ duration: 0.9 }}
         className="relative z-10 max-w-4xl"
       >
-        <h1 className="text-4xl md:text-6xl font-bold  text-white">
-          Dream Sky Airways Pvt. Ltd.
-        </h1>
+        <h2 className="text-4xl md:text-6xl font-bold  text-white">
+          Dream Sky Airways 
+        </h2>
 
         <p className="mt-6 text-lg md:text-xl text-white/80">
           Recognized by MCA, MSME & NCT Certified | Established in 2018

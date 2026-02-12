@@ -39,7 +39,7 @@ export default function VisionValues() {
           </motion.div>
 
           <p className="text-[var(--muted)] leading-relaxed max-w-md">
-            At <strong>Dream Sky Airways Pvt. Ltd.</strong>, our values are built
+            At <strong>Dream Sky Airways</strong>, our values are built
             on integrity, transparency, and customer satisfaction. We deliver
             personalized travel planning and reliable tour services for
             memorable domestic and international journeys.

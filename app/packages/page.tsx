@@ -1,79 +1,65 @@
-"use client";
+import type { Metadata } from "next";
+import PackageSetup from "./PackageSetup";
 
-import Link from "next/link";
-import Image from "next/image";
-import { packages } from "../data/packages";
-import { useEffect, useState } from "react";
-import HeroVideo from "@/components/HeroVideo";
+export const metadata: Metadata={
+  title:"Affordable Tour Packages | Dream Sky Airways Best Deals",
+  description:"Explore affordable tour packages with Dream Sky Airways. Get best travel deals, customized trips, flight bookings, and hassle-free holiday planning.",
+  keywords: [
+    "dream sky airways packages",
+    "tour packages",
+    "travel packages",
+    "holiday packages",
+    "cheap tour packages",
+    "best travel deals",
+    "india tour packages",
+    "international tour packages",
+    "flight and tour packages",
+    "customized travel packages",
+    "budget holiday packages",
+    "family tour packages",
+    "honeymoon packages",
+    "vacation deals",
+  ],
+  alternates:{
+    canonical:"https://www.dreamskyairways.com/packages",
+  },
+  robots:{
+    index:true,
+    follow:true,
+    nocache:false,
+    googleBot:{
+      index:true,
+      follow:true,
+      noimageindex:false,
+      "max-video-preview":-1,
+      "max-image-preview":"large",
+      "max-snippet":-1,
+    },
+  },
+  openGraph:{
+    title:"Affordable Tour Packages | Dream Sky Airways Best Deals",
+    description:"Explore affordable tour packages with Dream Sky Airways. Get best travel deals, customized trips, flight bookings, and hassle-free holiday planning.",
+    url:"https://www.dreamskyairways.com/packages",
+    siteName:"Dream Sky Airways",
+    type:"website",
+    locale:"en_IN",
+    images:[
+      {
+      url:"https://www.dreamskyairways.com/ogImage.webp",
+      width:1200,
+      height:630,
+      alt:"dream sky airways packages og image",  
+  },
+],
+  },
+  twitter:{
+    card:"summary_large_image",
+    title:"Affordable Tour Packages | Dream Sky Airways Best Deals",
+    description:"Explore affordable tour packages with Dream Sky Airways. Get best travel deals, customized trips, flight bookings, and hassle-free holiday planning.",
 
-export default function PackagesPage() {
-  return (
-    <section className="max-w-7xl mx-auto px-6 py-14 mt-0">
-<HeroVideo/>
-      <h1 className="text-4xl font-bold my-10">
-        All Packages
-      </h1>
+  },
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        {packages.map((pkg) => (
-          <PackageCard key={pkg.id} pkg={pkg} />
-        ))}
-      </div>
-    </section>
-  );
-}
-
-
-function PackageCard({ pkg }: any) {
-  const [current, setCurrent] = useState(0);
-
-  useEffect(() => {
-    if (!pkg.images || pkg.images.length === 0) return;
-
-    const interval = setInterval(() => {
-      setCurrent((prev) =>
-        prev === pkg.images.length - 1 ? 0 : prev + 1
-      );
-    }, 2500);
-
-    return () => clearInterval(interval);
-  }, [pkg.images]);
-
-  return (
-    <Link
-      href={`/packages/${pkg.slug}`}
-      className="block rounded-xl bg-white shadow hover:shadow-lg transition overflow-hidden"
-    >
-      {/* 🔁 IMAGE SLIDER */}
-      <div className="relative h-48 w-full">
-        {pkg.images.map((img: string, index: number) => (
-          <Image
-            key={index}
-            src={img}
-            alt={`${pkg.title} image ${index + 1}`}
-            fill
-            className={`
-              object-cover transition-opacity duration-700
-              ${index === current ? "opacity-100" : "opacity-0"}
-            `}
-          />
-        ))}
-      </div>
-
-      {/* 📄 CONTENT */}
-      <div className="p-4">
-        <h3 className="text-lg font-bold">
-          {pkg.title}
-        </h3>
-
-        <p className="text-sm text-gray-600">
-          {pkg.days}
-        </p>
-
-        <p className="mt-2 font-semibold text-[#0D6269]">
-          {pkg.price}
-        </p>
-      </div>
-    </Link>
-  );
-}
+};
+export default function Page(){
+  return <PackageSetup />
+};

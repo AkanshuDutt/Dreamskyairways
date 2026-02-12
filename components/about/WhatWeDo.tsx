@@ -43,7 +43,7 @@ export default function WhatWeDo() {
         </h2>
 
         <p className="text-center text-[var(--muted)] max-w-3xl mx-auto mb-12">
-          Dream Sky Airways Pvt. Ltd. is a trusted travel and aviation services
+          Dream Sky Airways is a reliable travel and aviation services
           company offering complete tour planning, ticket booking, and career
           support—designed to make every journey smooth, affordable, and
           memorable.

@@ -33,7 +33,7 @@ export default function Hero({
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/20 z-10" />
 
-      {/* ================= HERO CONTENT ================= */}
+      
       <div className="relative z-20 flex h-full flex-col items-center justify-center text-center px-4 pb-40">
         <h1 className="font-extrabold leading-tight mb-6">
           {/* Line 1 */}
@@ -67,10 +67,7 @@ export default function Hero({
             {titleLine3}
           </motion.span>
         </h1>
-      </div>
-
-      {/* ================= BOOKING TABS (OVERLAP) ================= */}
-   
+      </div>   
     </section>
   );
 }

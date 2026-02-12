@@ -1,7 +1,8 @@
 "use client";
 import { useState } from "react";
-import Swal from "sweetalert2"; 
+import Swal from "sweetalert2";
 import LocationMap from "@/components/LocationMap";
+import axios from "axios";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -12,41 +13,51 @@ export default function ContactSection() {
   });
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  
 
-    console.log("Form Data Submitted:", formData);
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+    // console.log(formData)
+  try { 
+    const res = await axios.post(
+      "http://localhost:8080/api/contact",
+      formData,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      } 
+    );
 
-   
     Swal.fire({
       title: "Success!",
-      text: "Message sent successfully! Our team will contact you soon.",
+      text: "Message sent successfully!",
       icon: "success",
-      confirmButtonText: "OK",
-      confirmButtonColor: "#0D6269",      
-      background: "#ffffff",              
-      color: "#0D6269",                  
-      customClass: {
-        popup: "rounded-3xl shadow-2xl",  
-        confirmButton: "hover:bg-[#083A3F] transition", 
-      },
-      timer: 3000,                        
-      timerProgressBar: true,
     });
 
-    
     setFormData({
       name: "",
       email: "",
       subject: "",
       message: "",
     });
-  };
+  } catch (error: any) {
+    Swal.fire({
+      title: "Error!",
+      text:
+        error?.response?.data?.message ||
+        "Something went wrong",
+      icon: "error",
+    });
+  }
+};
 
   return (
     <>
